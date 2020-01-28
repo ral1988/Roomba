@@ -132,15 +132,16 @@ namespace Roomba_console
             var (RoombaX, RoombaY, RoombaAngle) = world;
             var RoombaAngleRadians = (RoombaAngle * Math.PI) / 180;
 
-            var newX = RoombaX + 0.01 * Math.Sin(RoombaAngleRadians);
-            var newY = RoombaY + 0.01 * Math.Cos(RoombaAngleRadians);
+            var newX = RoombaX + 0.0142857142857143 * Math.Sin(RoombaAngleRadians);
+            var newY = RoombaY + 0.0142857142857143 * Math.Cos(RoombaAngleRadians);
 
             var collided = InCollision(newX, newY);
 
             if (collided)
             {
-                // Set the angle to a random angle
-                var NewAngle = prng.Next(0, 360);
+                // Set the angle to random angle
+                var NewAngle = prng.Next(89.50, 90.50);
+
                 newWorld = (RoombaX, RoombaY, NewAngle);
             }
             else
